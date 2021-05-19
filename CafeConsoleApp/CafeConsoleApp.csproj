@@ -48,6 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Compile Include="ProgramUI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GoldBadgeChallenges\Cafe.csproj">
+      <Project>{d275873e-32a4-4a6d-986a-b17936458e00}</Project>
+      <Name>Cafe</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
