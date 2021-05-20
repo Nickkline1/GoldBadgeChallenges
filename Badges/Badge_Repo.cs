@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Badges
 {
-    public class Badge_Repo
+    public class Badge_Repo //REMEMBER TO PUT THE CRUD HERE DUMMY
     {
         private Dictionary<int, List<string>> _repo = new Dictionary<int, List<string>>();
 
@@ -25,6 +25,35 @@ namespace Badges
         {
             return _repo;
         }
+        public Badge GetABadgeByID(int badgeid)
+        {
+            if (_repo.ContainsKey(badgeid))
+            {
+                Badge badge = new Badge(badgeid);
+                badge.Doors = _repo[badgeid];
+                return badge;
+            }
+            return null;
+        }
 
+        //UPDATE
+        public bool UpdateExistingBadge(int oldBadgeID, Badge newBadge)
+        {
+            Badge oldBadge = GetABadgeByID(oldBadgeID);
+            if (oldBadge != null)
+            {
+                oldBadge.BadgeID = newBadge.BadgeID;
+                oldBadge.Doors = newBadge.Doors;
+                return true;
+            }
+            else { return false; }
+        }
+
+        //DELETE
+        public bool DeleteBadge(Badge badge)
+        {
+            bool deleteBadge = _repo.Remove(badge.BadgeID);
+            return deleteBadge;
+        }
     }
 }

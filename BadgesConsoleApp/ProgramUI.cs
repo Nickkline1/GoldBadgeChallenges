@@ -1,11 +1,7 @@
 ﻿using Badges;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BadgesConsoleApp
 {
@@ -65,7 +61,6 @@ namespace BadgesConsoleApp
                     default:
                         break;
                 }
-
             }
         }
         public void AddBadge()
@@ -75,7 +70,7 @@ namespace BadgesConsoleApp
             Console.WriteLine("ADD A BADGE");
             Console.WriteLine("Enter the New Badge Number");
             int badgeNum = Convert.ToInt32(Console.ReadLine());
-            if (_repo.GetBadgeByID(badgeNum) != null)
+            if (_repo.GetABadgeByID(badgeNum) != null)
             {
                 Console.WriteLine("Badge number already exists in system. Update instead of Add");
                 Console.WriteLine("Press any key to return");
@@ -90,7 +85,7 @@ namespace BadgesConsoleApp
                     Console.WriteLine("Please enter Door that Badge #" + badgeNum + "needs acess to:");
                     doors.Add(Console.ReadLine());
                     Console.WriteLine("Are there more doors needed (Y/N)?");
-                    string moreDoor = Console.ReadLine();
+                    string moreDoors = Console.ReadLine();
                     if (moreDoors.ToLower() == "n")
                     {
                         looper = false;
