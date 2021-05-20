@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Badges\Badges.csproj">
-      <Project>{8B3905CF-0759-492B-AA29-49F6E7D1D5FF}</Project>
+      <Project>{8b3905cf-0759-492b-aa29-49f6e7d1d5ff}</Project>
       <Name>Badges</Name>
     </ProjectReference>
   </ItemGroup>
